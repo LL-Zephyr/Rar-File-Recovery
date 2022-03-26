@@ -46,17 +46,22 @@ elif letters == "lower":
 elif letters == "both" or letters == "d":
     constraints += s_lib.up_low()
 
-for password in product(constraints, repeat=r):
-  #Need to join because product returns list
-  pw = "".join(password)
-  try:
-    with rarfile.RarFile(rar_file) as rf:
-      rf.extractall(location, pwd=pw)
-      print(f"Successfully extracted at {location}")
-      break
-      
-  except:
-    print(f"not: {pw}")
+running = True
+while running is True:
+    for password in product(constraints, repeat=r):
+      #Need to join because product returns list
+      pw = "".join(password)
+      try:
+        with rarfile.RarFile(rar_file) as rf:
+          rf.extractall(location, pwd=pw)
+          print(f"Successfully extracted at {location}")
+          running = False
+          break
+          
+      except:
+        print(f"not: {pw}")
+
+    r += 1
     
       
   
