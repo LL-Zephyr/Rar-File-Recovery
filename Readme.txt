@@ -1,4 +1,5 @@
 IMPORTANT:
+* Need to install all the needed library 
 * As stated in the rarfile library, it needs a tool to extract a rar file.
 
 TO GET THIS TOOL: //There were a lot of ways to get tools
