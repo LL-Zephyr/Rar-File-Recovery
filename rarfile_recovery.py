@@ -54,7 +54,7 @@ while running is True:
       try:
         with rarfile.RarFile(rar_file) as rf:
           rf.extractall(location, pwd=pw)
-          print(f"Successfully extracted at {location}")
+          print(f"Password: {pw}")
           running = False
           break
           
@@ -62,6 +62,13 @@ while running is True:
         print(f"not: {pw}")
 
     r += 1
+
+
+if len(location) >= 1:
+    print(f"Successfully extracted at {location}")
+else:
+    print("Successfully extracted at current location")
+
     
       
   
